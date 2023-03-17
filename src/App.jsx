@@ -3,7 +3,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // layouts
 import Main, { mainLoader } from "./layouts/Main";
-import Dashboard, { dashboardLoader } from "./pages/Dashboard";
+import Dashboard, { dashboardAction, dashboardLoader } from "./pages/Dashboard";
 import Error from "./pages/Error";
 // actions
 import { logoutAction } from "./actions/logout";
@@ -31,6 +31,7 @@ const router = createBrowserRouter([
         element: <Dashboard />,
         loader: dashboardLoader,
         errorElement: <Error />,
+        action: dashboardAction,
       },
       {
         path: "/about",
