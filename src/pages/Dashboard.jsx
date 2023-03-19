@@ -5,6 +5,7 @@ import Intro from "../components/Intro";
 import { toast } from "react-toastify";
 import AddBudgetForm from "../components/AddBudgetForm";
 import AddExpenseForm from "../components/AddExpenseForm";
+import BudgetItem from "../components/BudgetItem";
 
 // loader
 // bu loader'ı App.jsx'de route'da loader'a ekleyeceğiz, yani bu route bir loader'a sahip yani oraya gittiğinde bu loader'ı çalıştıracak
@@ -78,10 +79,16 @@ const Dashboard = () => {
           </h1>
           <div className="grid-sm">
             {budgets && budgets.length > 0 ? (
-              <div className="gird-lg">
+              <div className="grid-lg">
                 <div className="flex-lg">
                   <AddBudgetForm />
                   <AddExpenseForm budgets={budgets} />
+                </div>
+                <h2>Existing Budgets</h2>
+                <div className="budgets">
+                  {budgets.map((budget) => (
+                    <BudgetItem key={budget.id} budget={budget} />
+                  ))}
                 </div>
               </div>
             ) : (
