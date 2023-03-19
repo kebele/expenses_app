@@ -23,6 +23,8 @@ const Intro = () => {
             aria-label="Your Name"
             autoComplete="given-name"
           />
+          {/* bunun sebebi başka inputlarımızda olacak ve onlarda bu hideen olan inputu kullanacaklar ve value newUser olacak, Dashboard da neewUser ile kullanacağız, */}
+          <input type="hidden" name="_action" value="newUser" />
           <button type="submit" className="btn btn--dark">
             <span>create account</span>
             <UserPlusIcon width={20} />
