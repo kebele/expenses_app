@@ -2,7 +2,7 @@
 
 // wait
 export const waait = () =>
-  new Promise((res) => setTimeout(res, Math.random() * 2000));
+  new Promise((res) => setTimeout(res, Math.random() * 800));
 
 // random color
 const generateRandomColor = () => {
@@ -72,6 +72,10 @@ export const formatPercentage = (amt) => {
     minimumFractionDigits: 0,
   });
 };
+
+// format date
+export const formatDateToLocaleString = (epoch) =>
+  new Date(epoch).toLocaleDateString();
 
 // total spent by budget
 export const calculateSpentByBudget = (budgetId) => {
